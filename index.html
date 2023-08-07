@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Aidan Scale</title>
+        <script src="configloader.js"></script>
+        <script src="prompts.js"></script>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="numberInputContainer" hidden class="inputContainer">
+            <p id="numberInputPrompt"></p>
+            <input type="number" id="numberInput" placeholder="Enter a value" />
+        </div>
+        <div id="textInputContainer" hidden class="inputContainer">
+            <p id="textInputPrompt"></p>
+            <input type="text" id="textInput" placeholder="Enter a value" />
+        </div>
+        <div id="passwordInputContainer" hidden class="inputContainer">
+            <p id="passwordInputPrompt"></p>
+            <input type="password" id="passwordInput" placeholder="Enter a password" />
+        </div>
+        <div id="main">
+            <button onclick="rate()" id="rateBtn">Rate something</button>
+            <p>Recent ratings:</p>
+            <div id="ratings">
+            <!--
+                <div class="rating">
+                    Test<br>
+                    5.5
+                </div>
+                
+                5 divs
+            -->
+            </div>
+            <div id="footer">
+                <button onclick="navPrev()" class="navBtn">&lt; Prev</button>
+                <span id="navText"></span>
+                <button onclick="navNext()" class="navBtn">Next &gt;</button>
+            </div>
+        </div>
+        <div id="editor" hidden>
+            <p style="font-size:100px">View Rating</p>
+            <br><br>
+            <p class="nomargin" onclick="labelChange()">Label (tap to change):</p>
+            <p id="editorLabel" class="underline nomargin" onclick="labelChange()"></p>
+            <br><br><br><br>
+            <p class="nomargin" onclick="ratingChange()">Rating (tap to change):</p>
+            <p id="editorRating" class="underline nomargin" onclick="ratingChange()"></p>
+            <br><br><br><br>
+            <p class="nomargin">Rating made:</p>
+            <p class="nomargin" id="editorDate"></p>
+            <br><br><br><br>
+            <button id="deleteBtn" onclick="deleteCurrent()">Delete</button><br>
+            <button id="backBtn" onclick="backToMain()">Back</button>
+        </div>
+    </body>
+</html>

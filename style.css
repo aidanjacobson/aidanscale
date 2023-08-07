@@ -1,0 +1,99 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(0, 182, 97);
+}
+
+.inputContainer p {
+    font-size: 75px;
+}
+
+.inputContainer input {
+    width: 500px;
+    font-size: 50px;
+    background-color: rgb(125, 255, 194);
+}
+
+#rateBtn {
+    font-size: 100px;
+    background-color: rgb(0, 183, 255);
+    width: 100%;
+    text-align: center;
+    height: 500px;
+    border-radius: 100px;
+}
+
+#main p, #editor p {
+    font-size: 75px;
+    text-align: center;
+}
+
+#ratings {
+    width: 100%;
+    height: 55%;
+}
+
+.rating {
+    margin: auto;
+    margin-bottom: 2px;
+    width: 100%;
+    height: 190px;
+    background-color: red;
+    border-radius: 50px;
+    font-size: 75px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#footer {
+    height: 5%;
+}
+
+.navBtn {
+    height: 100%;
+    width: 25%;
+    font-size: 50px;
+    margin: auto;
+    background-color: rgb(0, 140, 255);
+}
+
+#navText {
+    height: 100%;
+    width: 49%;
+    display: inline-block;
+    font-size: 38px;
+    text-align: center;
+    margin: auto;
+}
+
+.underline {
+    text-decoration: underline;
+    color: blue;
+}
+
+.nomargin {
+    margin: 0px;
+}
+
+#backBtn {
+    width: 100%;
+    background-color: red;
+    height: 10%;
+    font-size: 75px;
+    border-radius: 75px;
+    position: absolute;
+    bottom: 0px;
+}
+
+#deleteBtn {
+    width: 100%;
+    margin: auto;
+    background-color: yellow;
+    height: 10%;
+    font-size: 75px;
+    border-radius: 25px;
+}
