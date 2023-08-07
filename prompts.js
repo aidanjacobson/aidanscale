@@ -7,6 +7,7 @@ function promptForNumber(question, value="", currentlyRating=false) {
     }
     numberInputPrompt.innerText = question;
     numberInput.value = value;
+    if (value != "") numberInput.select();
     numberInput.focus();
     return new Promise(function(resolve) {
         numberInput.onchange = function() {
@@ -16,6 +17,7 @@ function promptForNumber(question, value="", currentlyRating=false) {
             } else {
                 main.removeAttribute("hidden");
             }
+            numberInput.blur();
             resolve(+numberInput.value);
         }
         numberInput.onkeypress = function(e) {
@@ -26,6 +28,7 @@ function promptForNumber(question, value="", currentlyRating=false) {
                 } else {
                     main.removeAttribute("hidden");
                 }
+                numberInput.blur();
                 resolve(+numberInput.value);
             }
         }
@@ -41,6 +44,7 @@ function promptForPassword(question, value="", currentlyRating=false) {
     }
     passwordInputPrompt.innerText = question;
     passwordInput.value = value;
+    if (value != "") passwordInput.select();
     passwordInput.focus();
     return new Promise(function(resolve) {
         passwordInput.onchange = function() {
@@ -50,6 +54,7 @@ function promptForPassword(question, value="", currentlyRating=false) {
             } else {
                 main.removeAttribute("hidden");
             }
+            passwordInput.blur();
             resolve(passwordInput.value);
         }
         passwordInput.onkeypress = function(e) {
@@ -60,6 +65,7 @@ function promptForPassword(question, value="", currentlyRating=false) {
                 } else {
                     main.removeAttribute("hidden");
                 }
+                passwordInput.blur();
                 resolve(passwordInput.value);
             }
         }
@@ -75,6 +81,7 @@ function promptForText(question, value="", currentlyRating=false) {
     }
     textInputPrompt.innerText = question;
     textInput.value = value;
+    if (value != "") textInput.select();
     textInput.focus();
     return new Promise(function(resolve) {
         textInput.onchange = function() {
@@ -84,16 +91,18 @@ function promptForText(question, value="", currentlyRating=false) {
             } else {
                 main.removeAttribute("hidden");
             }
+            textInput.blur();
             resolve(textInput.value);
         }
         textInput.onkeypress = function(e) {
-            textInputContainer.setAttribute("hidden", true);
-            if (currentlyRating) {
-                editor.removeAttribute("hidden");
-            } else {
-                main.removeAttribute("hidden");
-            }
             if (e.keyCode == 13) {
+                textInputContainer.setAttribute("hidden", true);
+                if (currentlyRating) {
+                    editor.removeAttribute("hidden");
+                } else {
+                    main.removeAttribute("hidden");
+                }
+                textInput.blur();
                 resolve(textInput.value);
             }
         }

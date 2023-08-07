@@ -10,10 +10,14 @@
     }
 */
 
+var loaded = true;
+var deferRating = false;
 window.onload = async function() {
     await doSecurityCheck();
     await downloadConfig();
+    loaded = true;
     displayRatings();
+    if (deferRating) rate();
 }
 
 var configLoader;
@@ -48,6 +52,10 @@ async function downloadConfig() {
 }
 
 async function rate() {
+    if (!loaded) {
+        deferRating = true;
+        return;
+    }
     var label = await promptForText("Enter a label for your rating:");
     var rating = await promptForNumber("Enter your rating:");
     var timestamp = Date.now();
